@@ -17,14 +17,12 @@ services:
     depends_on:
       - postgres
     environment:
-      - DB_DRIVER=org.postgresql.Driver
-      - DB_URL=jdbc:postgresql://postgres:5432/camunda
-      - DB_USERNAME=camunda
-      - DB_PASSWORD=camunda
-      - ADMIN_LOGIN=admin
-      - ADMIN_PASSWORD=admin
-      - WAIT_FOR=postgres:5432
+      - ASPNETCORE_ENVIRONMENT=Development
     links:
         - postgres
     ports:
         - 5200:5200
+
+networks:
+  mynetwork:
+     driver: bridge
