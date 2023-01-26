@@ -2,6 +2,11 @@
 Для развертывания приложения используйте команду:
 docker-compose up -d
 
+Для применения миграций в БД используйте:
+
+dotnet-ef database --startup-project ..\GameInventory\GameInventory.csproj update -v
+for /d /r .. %%d in (bin,obj) do @if exist "%%d" rd /s /q "%%d" 
+
 Реализованные API:
 
 /register 
